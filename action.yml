@@ -1,0 +1,22 @@
+name: Delete AWS ELB Target Group
+description: Deletes an AWS ELB using either a Rule ARN or the matching rules to remove
+
+branding:
+  icon: activity
+  color: red
+
+inputs:
+  target-group:
+    description: The ARN or name of the target group
+    required: true
+  fail-if-no-match:
+    description: Fails the action if a rule is not found using the given matchers
+    required: false
+
+outputs:
+  target-group-arn:
+    description: ARN of the deleted target group
+
+runs:
+  using: node12
+  main: index.js
